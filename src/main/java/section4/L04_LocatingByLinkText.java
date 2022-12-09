@@ -10,11 +10,10 @@ public class L04_LocatingByLinkText {
         System.setProperty("webdriver.firefox.driver", "geckodriver");
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        driver.get("https://automationtesting.co.uk/https://automationtesting.co.uk/");
+        driver.get("https://automationtesting.co.uk");
         driver.getPageSource();
 
-        WebElement element = driver.findElement(By.linkText("index.html"));
-        element.sendKeys("firstName");
-        driver.close();
+        driver.findElement(By.linkText("ACTIONS")).click(); // this on the webpage is uppercase
+        // <a href="actions.html">Actions</a>
     }
 }
