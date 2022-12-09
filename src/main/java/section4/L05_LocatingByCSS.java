@@ -19,7 +19,7 @@ public class L05_LocatingByCSS {
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://automationtesting.co.uk/buttons.html");
-        driver.findElement(By.cssSelector("#btn_one")).click();
+        driver.findElement(By.cssSelector("button#btn_one")).click();
 
     }
 }
