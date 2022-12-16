@@ -2,6 +2,7 @@ package section5;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 
@@ -15,7 +16,8 @@ public class L09_Popups {
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://www.automationtesting.co.uk/popups.html");
-        driver.findElement(By.xpath("//button[text()='Trigger Pop-up']")).click();
+        WebElement triggerPopUp = driver.findElement(By.xpath("//button[text()='Trigger Pop-up']"));
+        triggerPopUp.click();
 
         String mainWindow = driver.getWindowHandle();
         Set<String> handles = driver.getWindowHandles();
@@ -25,6 +27,7 @@ public class L09_Popups {
             driver.close();
         });
         driver.switchTo().window(mainWindow);
+        triggerPopUp.click();
 
     }
 }
